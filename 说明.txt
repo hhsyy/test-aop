@@ -1,0 +1,5 @@
+一、使用
+    1.导入spring-boot-starter-aop包，配置yml文件，添加测试controller
+    2.创建aop测试类UserAopOperator，添加@Aspect开启aop
+    3.添加切入点test()方法，添加@Pointcut("execution(public * com.yiyuclub.testaop.controller..*.*(..))")表明切入位置
+    4.可以添加doBefore(),doAfter()等方法，需标明@Before、@After
