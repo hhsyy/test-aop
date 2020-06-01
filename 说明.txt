@@ -7,6 +7,7 @@
     3.添加切入点test()方法，添加@Pointcut("execution(public * com.yiyuclub.testaop.controller..*.*(..))")表明切入位置
     4.可以添加doBefore(),doAfter()等方法，需标明@Before、@After
 
+
 二、注解说明
 
     1.@Aspect：声明切面，标记类
@@ -52,7 +53,10 @@
 
     5.织入（weaving） 把切面应用到目标对象来创建新的代理对象的过程。
 
-五、使用注解来使用切面
-    AfterReturning参数问题
-    方法耗时计算的实现
+
+五、例子
+    1.方法耗时计算的实现
+        使用@Around ，计算joinPoint.proceed()前后时间
+
+    2.使用注解来使用切面
 

@@ -36,9 +36,10 @@ public class UserAopOperator {
         System.out.println(new Gson().toJson(joinPoint.getArgs()));
     }
 
-    @AfterReturning("test()")
-    public void afterReturning(JoinPoint point) {
+    @AfterReturning(value = "test()",returning = "ret")
+    public void afterReturning(JoinPoint point,Object ret) {
         System.out.println("切入点执行返回结果后执行");
+        System.out.println("返回值："+ret);//ret为该切面目标的的返回值。非rest()方法返回值，无返回指责为空
     }
 
     @AfterThrowing(value = "test()", throwing = "ex")
@@ -46,6 +47,4 @@ public class UserAopOperator {
         System.out.println("切入点执行异常后执行");
         System.out.println("ex = " + ex.getMessage());
     }
-
-
 }
